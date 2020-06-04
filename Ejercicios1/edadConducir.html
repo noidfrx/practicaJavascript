@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edad Conducir</title>
+  </head>
+  <body>
+    <script>
+      var edad;
+
+      //Se pide edad por pantalla
+      edad = prompt("Introduzca su edad");
+
+      //Se comprueba que lo ingresado contenga algo
+      if (edad == "") {
+        document.write("No ha ingresado datos de edad");
+      } else {
+        //Se comprueba que lo ingresado sea un número
+        if (Number(edad) == edad) {
+          //Se comprueba que edad sea positiva
+          if (edad >= 0) {
+            document.write("Escribió un número");
+
+            //Se comprueba que el número pueda o no conducir
+            if (edad >= 18) {
+              document.write(
+                "<h1>Puedes conducir, porque tienes " + edad + " años</h1>"
+              );
+            } else {
+              //Se hace diferenciación si tiene 1 o más años
+              if (edad == 1) {
+                document.write(
+                  "<h1>No puedes conducir, porque tienes " + edad + " año</h1>"
+                );
+              } else {
+                document.write(
+                  "<h1>No puedes conducir, porque tienes " + edad + " años</h1>"
+                );
+              }
+            }
+          } else {
+            document.write(
+              "<a href='edadConducir.html'>No puede tener edad negativa</a>"
+            );
+          }
+        } else {
+          document.write(
+            "<a href='edadConducir.html'>No ingresó un número</a>"
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
